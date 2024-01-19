@@ -1,22 +1,22 @@
 <div id="<%= dom_id product %>">
   <p>
-    <strong>Name:</strong>
+    <strong>Produto: </strong>
     <%= product.name %>
   </p>
 
   <p>
-    <strong>Description:</strong>
+    <strong>Descrição: </strong>
     <%= product.description %>
   </p>
 
   <p>
-    <strong>Price:</strong>
+    <strong>Preço:</strong>
     <%= product.price %>
   </p>
 
   <p>
-    <strong>Available for sale:</strong>
-    <%= product.available_for_sale %>
+    <strong>Disponível para venda: </strong>
+    <%= product.available_for_sale ? 'Sim' : 'Não' %>
   </p>
 
 </div>
