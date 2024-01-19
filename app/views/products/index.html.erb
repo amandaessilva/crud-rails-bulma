@@ -1,25 +1,24 @@
 <p style="color: green"><%= notice %></p>
 
-<div id="products">
-  <table class="table">
+<div>
+<%= link_to "Novo produto", new_product_path, class: "button is-primary" %>
+</div>
+<br>
+<br>
+<div id="products" class="box">
+  <div class="table-container">
+    <h1>Lista de produtos</h1>
+  </div>
+  <table class="table is-fullwidth">
   <thead>
     <tr>
-      <th><abbr title="Nome do produto">Nome</abbr></th>
-      <th><abbr title="Descrição do produto">Descrição</abbr></th>
-      <th><abbr title="Valor do produto">Valor</abbr></th>
-      <th><abbr title="Disponível para venda?">Disp Venda</abbr></th>
+      <th>Nome</th>
+      <th>Descrição</th>
+      <th>Valor</th>
+      <th>Disp Venda</th>
       <th>Ações</th>
     </tr>
   </thead>
-  <tfoot>
-    <tr>
-      <th><abbr title="Nome do produto">Nome</abbr></th>
-      <th><abbr title="Descrição do produto">Descrição</abbr></th>
-      <th><abbr title="Valor do produto">Valor</abbr></th>
-      <th><abbr title="Disponível para venda?">Disp Venda</abbr></th>
-      <th>Ações</th>
-    </tr>
-  </tfoot>
   <tbody>
     <% @products.each do |product| %>
       <tr>
@@ -35,4 +34,3 @@
 
 </div>
 
-<%= link_to "Novo produto", new_product_path, class: "button" %>
