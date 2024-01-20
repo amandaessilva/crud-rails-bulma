@@ -1,6 +1,6 @@
 <div id="<%= dom_id product %>">
-
-  <table class="table is-fullwidth">
+  <div class="table-container">
+    <table class="table is-fullwidth">
     <thead>
       <tr>
         <th>Produto: </th>
@@ -24,12 +24,13 @@
             <%= link_to edit_product_path(product), class: "button is-primary is-outlined" do %>
               <i class="fas fa-edit"></i>
             <% end %>
-            <%= button_to product, method: :delete, class: "button is-danger is-outlined" do %>
-              <i class="fas fa-trash-alt"></i>
-            <% end %>
+              <%= button_to product, method: :delete, class: "button is-danger is-outlined", id: "deleteButton" do %>
+                <i class="fas fa-trash-alt"></i>
+              <% end %>
           </div>
         </td>
       </tr>
     </tbody>
-  </table>
+    </table>
+  </div>
 </div>

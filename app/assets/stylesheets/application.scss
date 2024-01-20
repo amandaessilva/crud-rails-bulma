@@ -4,13 +4,20 @@
 body {
   background: linear-gradient(to top right, rgb(28,136,148), rgb(68,169,100));
   margin: 0;
+  padding: 0;
   font-family: Arial, sans-serif;
   color: #fff;
   display: flex;
+  min-height: 100vh;
 }
 
 .container {
   padding: 4%;
+  max-width: 100%;
+}
+
+.container:not(.is-max-desktop):not(.is-max-widescreen) {
+  max-width: 100%;
 }
 
 .center {
@@ -28,8 +35,9 @@ body {
   background-color: rgb(107, 108, 109);
   position: fixed;
   bottom: 0;
-  width: 100%;
+
   padding: 10px;
+  width: 100%;
   text-align: center;
   color: #fff;
 }
@@ -89,4 +97,26 @@ body {
   background: linear-gradient(to top right, #1c8894, #44a964);
   color: #fff;
   transition: box-shadow 0.3s ease;
+}
+
+
+/*Estilos botao paginação*/
+.pagination-link.is-current {
+  background-color: #44a964;
+  border-color: #ffffff00;
+  color: #ffffff;
+
+}
+
+.pagination-link {
+  background-color: #ffffff00;
+  border-color: #44a964;
+  color: #44a964;
+
+}
+
+a {
+  color: #44a964;
+  cursor: pointer;
+  text-decoration: none;
 }
