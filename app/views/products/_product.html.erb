@@ -1,22 +1,38 @@
 <div id="<%= dom_id product %>">
-  <p>
-    <strong>Produto: </strong>
-    <%= product.name %>
-  </p>
+  <div class="table-container">
+    <table class="table is-fullwidth">
+    <thead>
+      <tr>
+        <th>Produto: </th>
+        <th>Descrição: </th>
+        <th>Preço: </th>
+        <th>Disponível para venda: </th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.description  %></td>
+        <td><%= product.price %></td>
+        <td><%= product.available_for_sale ? 'Sim' : 'Não' %></td>
+        <td>
+          <div style="display: flex; gap: 5px;">
+            <%= link_to products_path, class: "button is-primary is-outlined" do %>
+              <i class="fas fa-arrow-left"></i>
+            <% end %>
 
-  <p>
-    <strong>Descrição: </strong>
-    <%= product.description %>
-  </p>
+            <%= link_to edit_product_path(product), class: "button is-primary is-outlined" do %>
+              <i class="fas fa-edit"></i>
+            <% end %>
 
-  <p>
-    <strong>Preço:</strong>
-    <%= product.price %>
-  </p>
-
-  <p>
-    <strong>Disponível para venda: </strong>
-    <%= product.available_for_sale ? 'Sim' : 'Não' %>
-  </p>
-
+            <%= button_to product, method: :delete, class: "button is-danger is-outlined", id: "deleteButton",  data:{ turbo_method: :delete,  turbo_confirm: 'Deseja realmente deletar?'} do %>
+              <i class="fas fa-trash-alt"></i>
+            <% end %>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+  </div>
 </div>

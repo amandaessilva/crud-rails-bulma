@@ -46,6 +46,8 @@ gem "bootsnap", require: false
 
 gem 'bulma-rails', '~> 0.9.1'
 
+gem 'will_paginate'
+gem 'will_paginate-bulma'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

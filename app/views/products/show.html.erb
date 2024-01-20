@@ -1,10 +1,10 @@
-<p style="color: green"><%= notice %></p>
+<p style="color: white"><%= notice %></p>
 
-<%= render @product %>
 
-<div>
-  <%= link_to "Editar produto", edit_product_path(@product), class: "button" %> |
-  <%= link_to "Voltar", products_path, class: "button"  %>
-  <%= button_to "Excluir este produto", @product, method: :delete, class: "button" %>
+<div class="box">
+  <h3 class="title is-3">Visualizar</h3>
+
+  <div>
+  <%= render @product %>
+  </div>
 </div>
-

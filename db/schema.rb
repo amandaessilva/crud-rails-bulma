@@ -12,10 +12,10 @@
 
 ActiveRecord::Schema[7.1].define(version: 2024_01_17_220114) do
   create_table "products", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.string "description"
-    t.float "price"
-    t.boolean "available_for_sale"
+    t.float "price", null: false
+    t.boolean "available_for_sale", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
