@@ -52,4 +52,12 @@ en:
         description: Descrição
         price: Preço
         available_for_sale: Disponível para venda
+  will_paginate:
+    previous_label: "&#8592; Anterior"
+    previous_aria_label: "Página anterior"
+    next_label: "Próxima &#8594;"
+    next_aria_label: "Próxima pagina"
+    page_gap: "&hellip;"
+    container_aria_label: "Paginação"
+    page_aria_label: "Página %{page}"
 

@@ -2,10 +2,9 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('deleteButton').addEventListener('click', function(event) {
-    if (!confirm('Tem certeza que deseja deletar este produto?')) {
-      event.preventDefault();
-    }
-  });
-});
+
+function submitForm() {
+  document.getElementById("per_page_form").submit();
+}
+
+window.submitForm = submitForm;

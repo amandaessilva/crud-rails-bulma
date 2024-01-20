@@ -1,16 +1,34 @@
-
-<p style="color: green"><%= notice %></p>
-
+<p style="color: white"><%= notice %></p>
 
 <div id="products" class="box">
-  <div style="display: flex; justify-content: space-between; align-items: center;">
+  <div style="text-align: center;">
     <h3 class="title is-3">Produtos cadastrados</h3>
+  </div>
 
-    <div style="display: flex; gap: 5px;">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+    <div>
       <%= link_to "Novo produto", new_product_path, class: "button is-inverted" %>
     </div>
+
+    <div colspan="5">
+      <div style="display: flex; align-items: center;">
+        <span>Itens por página</span>
+        <%= form_tag(products_path, method: :get, id: "per_page_form") do %>
+          <div class="select" style="margin-left: 10px;">
+            <%= select_tag :per_page, options_for_select([10, 20, 50, 100], params[:per_page].to_i), onchange: "submitForm()" %>
+            <%= submit_tag "Apply", class: "button is-inverted", style: "display: none;" %>
+          </div>
+        <% end %>
+
+         <script>
+
+        </script>
+      </div>
+    </div>
   </div>
+
   <br>
+
   <div class="table-container">
     <table class="table is-fullwidth">
       <thead>
@@ -19,21 +37,7 @@
           <th>Descrição</th>
           <th>Preço</th>
           <th>Disponível para venda</th>
-          <th colspan="5">Itens por página
-            <%= form_tag(products_path, method: :get, id: "per_page_form") do %>
-              <div class="select">
-                <%= select_tag :per_page, options_for_select([10, 20, 30, 50, 100], params[:per_page].to_i), onchange: "submitForm()" %>
-                <%= submit_tag "Apply", class: "button is-inverted", style: "display: none;" %>
-              </div>
-            <% end %>
-
-            <script>
-              function submitForm() {
-                document.getElementById("per_page_form").submit();
-              }
-            </script>
-
-          </th>
+          <th>Ações</th>
         </tr>
         <tr>
         </tr>
@@ -53,7 +57,7 @@
                 <%= link_to edit_product_path(product), class: "button is-primary is-outlined" do %>
                   <i class="fas fa-edit"></i>
                 <% end %>
-                <%= button_to product, method: :delete, class: "button is-danger is-outlined", id: "deleteButton" do %>
+                <%= button_to product, method: :delete, class: "button is-danger is-outlined", id: "deleteButton",  data:{ turbo_method: :delete,  turbo_confirm: 'Deseja realmente deletar?'} do %>
                   <i class="fas fa-trash-alt"></i>
                 <% end %>
               </div>

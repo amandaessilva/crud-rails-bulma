@@ -13,7 +13,7 @@
 
   <div>
     <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name, class: "input" %>
+    <%= form.text_field :name, class: "input", required: true %>
   </div>
 
   <div>
@@ -24,13 +24,13 @@
   <div style="display: flex; justify-content: space-between;">
 
     <div style="flex: 1; margin-right: 10px;">
-      <%= form.label :price, "price", style: "display: block" %>
-      <%= form.text_field :price, class: "input" %>
+      <%= form.label :price, style: "display: block" %>
+      <%= form.number_field :price, class: "input", step: 'any', required: true %>
     </div>
 
     <div>
       <%= form.label :available_for_sale, style: "display: block" %>
-      <%= form.select :available_for_sale, [["Sim", true], ["Não", false]], { prompt: "Selecione uma opção" }, { class: "input" } %>
+      <%= form.select :available_for_sale, [["Sim", true], ["Não", false]], { prompt: "Selecione uma opção" }, { class: "input", required: true } %>
     </div>
 
   </div>
@@ -42,7 +42,5 @@
     <%= button_tag(type: 'submit', class: "button is-primary") do %>
       <i class="fas fa-save"></i>
     <% end %>
-
-
   </div>
 <% end %>

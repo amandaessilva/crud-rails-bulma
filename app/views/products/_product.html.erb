@@ -21,12 +21,14 @@
             <%= link_to products_path, class: "button is-primary is-outlined" do %>
               <i class="fas fa-arrow-left"></i>
             <% end %>
+
             <%= link_to edit_product_path(product), class: "button is-primary is-outlined" do %>
               <i class="fas fa-edit"></i>
             <% end %>
-              <%= button_to product, method: :delete, class: "button is-danger is-outlined", id: "deleteButton" do %>
-                <i class="fas fa-trash-alt"></i>
-              <% end %>
+
+            <%= button_to product, method: :delete, class: "button is-danger is-outlined", id: "deleteButton",  data:{ turbo_method: :delete,  turbo_confirm: 'Deseja realmente deletar?'} do %>
+              <i class="fas fa-trash-alt"></i>
+            <% end %>
           </div>
         </td>
       </tr>
