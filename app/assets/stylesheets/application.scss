@@ -1,20 +1,92 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
- @import 'bulma';
-/* app/assets/stylesheets/custom_styles.css */
+@import 'bulma';
+
+/* Estilos globais */
+body {
+  background: linear-gradient(to top right, rgb(28,136,148), rgb(68,169,100));
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  display: flex;
+}
+
 .container {
-  padding-top: 4%;
+  padding: 4%;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+}
+
+/* Estilos para o box dentro do elemento com id 'product' */
+#product .box {
+  border-radius: 10px;
+}
+
+/* Estilos para o rodapé */
+.footer {
+  background-color: rgb(107, 108, 109);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+}
+
+/* Estilos para botões específicos */
+
+.button.is-primary.is-outlined {
+  background-color: #ffffff00;
+  border-color: #44a964;
+  color: #44a964;
+
+  &:hover {
+    background-color: #44a964;
+    color: #f0ffff;
+    border-color: #44a964;
+  }
+}
+
+.button,
+.button.is-primary {
+  background-color: #44a964;
+  color: #f0ffff;
+
+  &:hover {
+    background-color: #44a964;
+    color: #f0ffff;
+    border-color: #44a964;
+  }
+}
+
+/* Estilos para a paginação */
+.pagination {
+  margin-top: 20px;
+}
+
+.pagination a {
+  padding: 0.5rem 0.75rem;
+  margin: 0 2px;
+}
+
+.pagination .page.current {
+  background-color: #44a964;
+  color: #fff;
+}
+
+.pagination .prev,
+.pagination .next {
+  margin: 0 5px;
+}
+
+.pagination .disabled {
+  opacity: 0.5;
+}
+
+/* Classe de gradiente */
+.is-gradient {
+  background: linear-gradient(to top right, #1c8894, #44a964);
+  color: #fff;
+  transition: box-shadow 0.3s ease;
 }

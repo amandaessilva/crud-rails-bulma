@@ -29,3 +29,27 @@
 
 en:
   hello: "Hello world"
+
+en:
+  helpers:
+    submit:
+      update: "Atualizar"
+
+en:
+  helpers:
+    submit:
+      create: "Salvar"
+
+# config/locales/pt-BR.yml
+
+en:
+  activerecord:
+    models:
+      product: Produto
+    attributes:
+      product:
+        name: Produto
+        description: Descrição
+        price: Preço
+        available_for_sale: Disponível para venda
+

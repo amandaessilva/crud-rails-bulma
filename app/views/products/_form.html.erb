@@ -18,21 +18,31 @@
 
   <div>
     <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description, class: "textarea", cols: 5, rows: 10 %>
-    <!-- Use class "textarea" for styling the text area -->
+    <%= form.text_area :description, class: "textarea", cols: 3, rows: 5 %>
   </div>
 
-  <div>
-    <%= form.label :price, style: "display: block" %>
-    <%= form.text_field :price, class: "input" %>
-  </div>
+  <div style="display: flex; justify-content: space-between;">
 
-  <div>
-    <%= form.label :available_for_sale, style: "display: block" %>
-    <%= form.check_box :available_for_sale %>
-  </div>
+    <div style="flex: 1; margin-right: 10px;">
+      <%= form.label :price, "price", style: "display: block" %>
+      <%= form.text_field :price, class: "input" %>
+    </div>
 
+    <div>
+      <%= form.label :available_for_sale, style: "display: block" %>
+      <%= form.select :available_for_sale, [["Sim", true], ["Não", false]], { prompt: "Selecione uma opção" }, { class: "input" } %>
+    </div>
+
+  </div>
+  <br>
   <div>
-    <%= form.submit %>
+    <%= link_to products_path, class: "button is-primary is-outlined" do %>
+      <i class="fas fa-arrow-left"></i>
+    <% end %>
+    <%= button_tag(type: 'submit', class: "button is-primary") do %>
+      <i class="fas fa-save"></i>
+    <% end %>
+
+
   </div>
 <% end %>

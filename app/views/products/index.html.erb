@@ -1,36 +1,63 @@
+
 <p style="color: green"><%= notice %></p>
 
-<div>
-<%= link_to "Novo produto", new_product_path, class: "button is-primary" %>
-</div>
-<br>
-<br>
+
 <div id="products" class="box">
-  <div class="table-container">
-    <h1>Lista de produtos</h1>
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <h3 class="title is-3">Produtos cadastrados</h3>
+
+    <div style="display: flex; gap: 5px;">
+      <%= link_to "Novo produto", new_product_path, class: "button is-inverted" %>
+    </div>
   </div>
+  <br>
   <table class="table is-fullwidth">
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Descrição</th>
-      <th>Valor</th>
-      <th>Disp Venda</th>
-      <th>Ações</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @products.each do |product| %>
+    <thead>
       <tr>
-        <td><%= product.name %></td>
-        <td><%= product.description %></td>
-        <td><%= number_to_currency(product.price) %></td>
-        <td><%= product.available_for_sale ? 'Sim' : 'Não' %></td>
-        <td><%= link_to "Visualizar produto", product, class: "button" %></td>
+        <th style="width:10%">Produto</th>
+        <th>Descrição</th>
+        <th>Preço</th>
+        <th>Disponível para venda</th>
+        <th colspan="5">Itens por página
+          <%= form_tag(products_path, method: :get, id: "per_page_form") do %>
+            <%= select_tag :per_page, options_for_select([10, 20, 30, 50, 100], params[:per_page].to_i), class: "select", onchange: "submitForm()" %>
+            <%= submit_tag "Apply", class: "button is-inverted", style: "display: none;" %>
+          <% end %>
+
+          <script>
+            function submitForm() {
+              document.getElementById("per_page_form").submit();
+            }
+          </script>
+
+        </th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
+      <tr>
+      </tr>
+    </thead>
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= product.name %></td>
+          <td><%= product.description %></td>
+          <td><%= number_to_currency(product.price) %></td>
+          <td><%= product.available_for_sale ? 'Sim' : 'Não' %></td>
+          <td>
+            <div style="display: flex; gap: 5px;">
+              <%= link_to product, class: "button is-primary is-outlined" do %>
+                <i class="fas fa-eye"></i>
+              <% end %>
+              <%= link_to edit_product_path(product), class: "button is-primary is-outlined" do %>
+                <i class="fas fa-edit"></i>
+              <% end %>
+              <%= button_to product, method: :delete, class: "button is-danger is-outlined" do %>
+                <i class="fas fa-trash-alt"></i>
+              <% end %>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate @products, renderer: BulmaPagination::Rails %>
 </div>
-

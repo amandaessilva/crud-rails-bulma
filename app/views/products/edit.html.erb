@@ -1,10 +1,7 @@
-<h1>Editar produto</h1>
-
-<%= render "form", product: @product %>
-
-<br>
-
-<div>
-  <%= link_to "Mostrar produto", @product, class: "button" %>
-  <%= link_to "Voltar", products_path, class: "button"  %>
+<div class="box">
+  <div>
+    <h3 class="title is-3 has-text-black center">Editar produto</h3>
+  </div>
+  <%= render "form", product: @product %>
 </div>
+
