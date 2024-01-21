@@ -13,6 +13,7 @@ SQLite: O banco de dados utilizado pela aplicação
 Configuração do Ambiente
 Clone o repositório para sua máquina local:
 
+
 ```bash
 git clone https://github.com/amandaessilva/crud-rails-bulma.git
 ```
