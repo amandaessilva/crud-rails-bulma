@@ -46,11 +46,6 @@ rails server
 
 Acesse a aplicação em http://localhost:3000 no seu navegador.
 
-Testes
-Para executar os testes automatizados, utilize o seguinte comando:
-
-```bash
-rails test
 ```
 
 Contato
