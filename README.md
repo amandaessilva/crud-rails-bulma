@@ -1,24 +1,57 @@
-# README
+### CRUD com Rails 7 e Bulma
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Bem-vindo à minha aplicação de estudo, um projeto simples desenvolvido com Ruby on Rails que implementa operações CRUD (Create, Read, Update, Delete). Este projeto foi criado com o objetivo de aprimorar meus conhecimentos em desenvolvimento web com Rails, explorando conceitos fundamentais do framework.
 
-Things you may want to cover:
+Este guia fornecerá instruções passo a passo sobre como configurar e executar a aplicação em sua máquina local.
 
-* Ruby version
+Pré-requisitos
+Antes de começar, certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
 
-* System dependencies
+Ruby: versão 3.3.0
+Rails: versão 7
+SQLite: O banco de dados utilizado pela aplicação
+Configuração do Ambiente
+Clone o repositório para sua máquina local:
 
-* Configuration
 
-* Database creation
+```bash
+git clone https://github.com/amandaessilva/crud-rails-bulma.git
+```
 
-* Database initialization
+Navegue até o diretório da aplicação:
 
-* How to run the test suite
+```bash
+cd seu-repositorio
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Instale as dependências:
 
-* Deployment instructions
+```bash
+bundle install
+```
 
-* ...
+Crie e migre o banco de dados:
+
+```bash
+rails db:create
+rails db:migrate
+```
+
+Executando a Aplicação
+Para iniciar o servidor de desenvolvimento, utilize o comando:
+
+```bash
+rails server
+```
+
+Acesse a aplicação em http://localhost:3000 no seu navegador.
+
+Testes
+Para executar os testes automatizados, utilize o seguinte comando:
+
+```bash
+rails test
+```
+
+Contato
+Se você tiver alguma dúvida ou problema, entre em contato através do meu e-mail: amanda.elensantos@gmail.com.
