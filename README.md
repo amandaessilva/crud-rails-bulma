@@ -46,7 +46,5 @@ rails server
 
 Acesse a aplicação em http://localhost:3000 no seu navegador.
 
-```
-
 Contato
 Se você tiver alguma dúvida ou problema, entre em contato através do meu e-mail: amanda.elensantos@gmail.com.
