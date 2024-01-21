@@ -15,28 +15,24 @@ Clone o repositório para sua máquina local:
 
 
 ```bash
-Copy code
 git clone https://github.com/amandaessilva/crud-rails-bulma.git
 ```
 
 Navegue até o diretório da aplicação:
 
 ```bash
-Copy code
 cd seu-repositorio
 ```
 
 Instale as dependências:
 
 ```bash
-Copy code
 bundle install
 ```
 
 Crie e migre o banco de dados:
 
 ```bash
-Copy code
 rails db:create
 rails db:migrate
 ```
@@ -45,7 +41,6 @@ Executando a Aplicação
 Para iniciar o servidor de desenvolvimento, utilize o comando:
 
 ```bash
-Copy code
 rails server
 ```
 
@@ -55,7 +50,6 @@ Testes
 Para executar os testes automatizados, utilize o seguinte comando:
 
 ```bash
-Copy code
 rails test
 ```
 
